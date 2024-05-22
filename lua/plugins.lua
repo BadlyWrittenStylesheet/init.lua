@@ -1,0 +1,86 @@
+vim.cmd.packadd('packer.nvim')
+
+return require('packer').startup(function(use)
+
+	use "wbthomason/packer.nvim"
+
+	use {
+		  'nvim-telescope/telescope.nvim', tag = '0.1.0',
+		  -- or                            , branch = '0.1.x',
+		  requires = { {'nvim-lua/plenary.nvim'} }
+	}
+
+	use({
+	      "folke/trouble.nvim",
+	      config = function()
+		  require("trouble").setup {
+		      icons = false,
+		      -- your configuration comes here
+		      -- or leave it empty to use the default settings
+		      -- refer to the configuration section below
+		  }
+	      end
+	})
+
+
+	use "nvim-lua/plenary.nvim"
+	use "BurntSushi/ripgrep"
+
+	-- use "nvim-tree/nvim-tree.lua"
+	use({"nvim-treesitter/nvim-treesitter", ":TSUpdate"})
+	use "mbbill/undotree"
+
+	use {
+		'neovim/nvim-lspconfig',
+		requires = {
+		    'hrsh7th/cmp-nvim-lsp',
+		    'hrsh7th/cmp-buffer',
+		    'hrsh7th/cmp-path',
+		    'hrsh7th/cmp-cmdline',
+		    'hrsh7th/nvim-cmp',
+		    'hrsh7th/cmp-vsnip',
+		    'hrsh7th/vim-vsnip',
+		}
+	}
+
+	use "hrsh7th/nvim-cmp"
+
+	-- Git
+	use "tpope/vim-fugitive"
+
+	-- Looks
+	use "folke/zen-mode.nvim"
+	use "folke/twilight.nvim"
+
+	-- Useful just like that
+	use {
+	  "folke/which-key.nvim",
+	  config = function()
+	    vim.o.timeout = true
+	    vim.o.timeoutlen = 300
+	    require("which-key").setup {
+	      -- your configuration comes here
+	      -- or leave it empty to use the default settings
+	      -- refer to the configuration section below
+	    }
+	  end
+	}
+
+	-- Showoff ;)
+	use 'andweeb/presence.nvim'
+
+
+	-- Theme
+	-- use "marko-cerovac/material.nvim"
+	-- use "ellisonleao/gruvbox.nvim"
+	use "nvim-tree/nvim-web-devicons"
+	use { "catppuccin/nvim", as = "catppuccin" }
+	use({
+		  'rose-pine/neovim',
+		  as = 'rose-pine',
+		  config = function()
+			  vim.cmd('colorscheme rose-pine')
+		  end
+	})
+
+end)
