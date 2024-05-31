@@ -9,8 +9,9 @@ vim.opt.relativenumber = true
 vim.cmd "set nowrap"
 
 -- Beautiful
-vim.cmd 'colorscheme rose-pine-moon'
+-- vim.cmd 'colorscheme rose-pine'
 -- vim.cmd.colorscheme 'catppuccin'
+vim.cmd.colorscheme 'tokyonight-night'
 
 
 require 'lspconfig' .pyright.setup{}
@@ -43,10 +44,6 @@ require("presence").setup({
 -- disable netrw at the very start of your init.lua
 -- vim.g.loaded_netrw = 0
 -- vim.g.loaded_netrwPlugin = 1
-
--- optionally enable 24-bit colour
-vim.opt.termguicolors = true
-
 
 -- require("nvim-tree").setup()
 

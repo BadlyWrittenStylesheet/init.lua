@@ -53,6 +53,8 @@ return require('packer').startup(function(use)
 	use "folke/twilight.nvim"
 
 	-- Useful just like that
+	use "tpope/vim-commentary"
+
 	use {
 	  "folke/which-key.nvim",
 	  config = function()
@@ -75,6 +77,7 @@ return require('packer').startup(function(use)
 	-- use "ellisonleao/gruvbox.nvim"
 	use "nvim-tree/nvim-web-devicons"
 	use { "catppuccin/nvim", as = "catppuccin" }
+	use "folke/tokyonight.nvim"
 	use({
 		  'rose-pine/neovim',
 		  as = 'rose-pine',
@@ -82,5 +85,4 @@ return require('packer').startup(function(use)
 			  vim.cmd('colorscheme rose-pine')
 		  end
 	})
-
 end)
