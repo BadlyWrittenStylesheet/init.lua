@@ -9,10 +9,11 @@ vim.opt.relativenumber = true
 vim.cmd "set nowrap"
 
 -- Beautiful
--- vim.cmd 'colorscheme rose-pine'
+vim.cmd 'colorscheme rose-pine'
 -- vim.cmd.colorscheme 'catppuccin'
-vim.cmd.colorscheme 'tokyonight-night'
+-- vim.cmd.colorscheme 'tokyonight-night'
 
+require("autoclose").setup()
 
 require 'lspconfig' .pyright.setup{}
 require("presence").setup({

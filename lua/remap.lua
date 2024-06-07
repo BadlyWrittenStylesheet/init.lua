@@ -6,3 +6,4 @@ vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 vim.keymap.set("n", "<C-z>", "<cmd>ZenMode<cr>")
 
+vim.keymap.set("n", "<leader>t", "<cmd>Telescope<cr>")

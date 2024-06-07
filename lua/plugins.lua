@@ -54,6 +54,10 @@ return require('packer').startup(function(use)
 
 	-- Useful just like that
 	use "tpope/vim-commentary"
+	-- use 'm4xshen/autoclose.nvim'
+
+	-- Less go
+	use "ThePrimeagen/vim-be-good"
 
 	use {
 	  "folke/which-key.nvim",
@@ -70,6 +74,12 @@ return require('packer').startup(function(use)
 
 	-- Showoff ;)
 	use 'andweeb/presence.nvim'
+	use({
+	    "NStefan002/screenkey.nvim",
+	    config = function()
+		require("screenkey").setup()
+	    end,
+	})
 
 
 	-- Theme
