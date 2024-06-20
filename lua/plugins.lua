@@ -54,7 +54,7 @@ return require('packer').startup(function(use)
 
 	-- Useful just like that
 	use "tpope/vim-commentary"
-	-- use 'm4xshen/autoclose.nvim'
+	use 'm4xshen/autoclose.nvim'
 
 	-- Less go
 	use "ThePrimeagen/vim-be-good"
@@ -72,6 +72,11 @@ return require('packer').startup(function(use)
 	  end
 	}
 
+	use {
+	  'nvim-lualine/lualine.nvim',
+	  requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+	}
+
 	-- Showoff ;)
 	use 'andweeb/presence.nvim'
 	use({
@@ -80,9 +85,16 @@ return require('packer').startup(function(use)
 		require("screenkey").setup()
 	    end,
 	})
+	-- use({
+	--     "NStefan002/screenkey.nvim",
+	--     config = function()
+	-- 	require("screenkey").setup()
+	--     end,
+	-- })
 
 
 	-- Theme
+	use "olimorris/onedarkpro.nvim"
 	-- use "marko-cerovac/material.nvim"
 	-- use "ellisonleao/gruvbox.nvim"
 	use "nvim-tree/nvim-web-devicons"
