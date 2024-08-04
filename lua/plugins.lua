@@ -45,16 +45,48 @@ return require('packer').startup(function(use)
 
 	use "hrsh7th/nvim-cmp"
 
+
+	use 'jose-elias-alvarez/null-ls.nvim'
+	use 'MunifTanjim/prettier.nvim'
+
+	  use({
+	    'Bekaboo/dropbar.nvim', requires = {
+	      'nvim-telescope/telescope-fzf-native.nvim'
+	    }
+	  })
+
+
+	use({ "MaximilianLloyd/ascii.nvim", requires = {
+
+		"MunifTanjim/nui.nvim"
+	} })
+
 	-- Git
 	use "tpope/vim-fugitive"
 
+
 	-- Looks
 	use "folke/zen-mode.nvim"
-	use "folke/twilight.nvim"
+	use {"folke/twilight.nvim",
+		config=function()
+			require("twilight").setup{
+				-- context = 10
+			}
+		end
+	}
+
+
+	use "nvim-tree/nvim-tree.lua"
+
+
+
+	use "rust-lang/rust.vim"
 
 	-- Useful just like that
 	use "tpope/vim-commentary"
 	use 'm4xshen/autoclose.nvim'
+
+	-- use "HlibShutov/Uwuifier"
 
 	-- Less go
 	use "ThePrimeagen/vim-be-good"
@@ -78,7 +110,10 @@ return require('packer').startup(function(use)
 	}
 
 	-- Showoff ;)
-	use 'andweeb/presence.nvim'
+	use "jiriks74/presence.nvim"
+	-- use 'andweeb/presence.nvim'
+
+
 	use({
 	    "NStefan002/screenkey.nvim",
 	    config = function()
@@ -93,18 +128,45 @@ return require('packer').startup(function(use)
 	-- })
 
 
-	-- Theme
+
+
+	-- Themes, i suck at picking one
+	use {
+	    'tiagovla/tokyodark.nvim',
+	    config = function()
+		require('tokyodark').setup {
+		    -- custom options here
+		}
+		-- vim.cmd('colorscheme tokyodark')
+	    end
+	}
+	use {
+		'maxmx03/fluoromachine.nvim',
+		config = function()
+		    local fm = require('fluoromachine')
+
+		    fm.setup {
+			glow = true,
+			theme = 'fluoromachine',
+			transparent = true,
+		    }
+
+		    -- vim.cmd.colorscheme 'fluoromachine'
+		end
+	    }
+	-- use "oxfist/night-owl.nvim"
+	use "rebelot/kanagawa.nvim"
 	use "olimorris/onedarkpro.nvim"
 	-- use "marko-cerovac/material.nvim"
 	-- use "ellisonleao/gruvbox.nvim"
 	use "nvim-tree/nvim-web-devicons"
-	use { "catppuccin/nvim", as = "catppuccin" }
-	use "folke/tokyonight.nvim"
+	-- use { "catppuccin/nvim", as = "catppuccin" }
+	-- use "folke/tokyonight.nvim"
 	use({
 		  'rose-pine/neovim',
 		  as = 'rose-pine',
-		  config = function()
-			  vim.cmd('colorscheme rose-pine')
-		  end
+		  -- config = function()
+			  -- vim.cmd('colorscheme rose-pine')
+		  -- end
 	})
 end)
